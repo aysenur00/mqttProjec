@@ -1,0 +1,27 @@
+<config>
+    <connection>
+        <host>broker.mqtt-dashboard.com</host>
+        <port>1883</port>
+    </connection>
+    <subscriptionList>
+        <subscription>
+            <topic>test1</topic>
+            <qos>0</qos>
+        </subscription>
+        <subscription>
+            <topic>test2</topic>
+            <qos>0</qos>
+        </subscription>
+        <subscription>
+            <topic>test3</topic>
+            <qos>2</qos>
+        </subscription>
+        <subscription>
+            <topic>test4</topic>
+            <qos>1</qos>
+        </subscription>
+        <subscription>
+            <topic>gazi123</topic><qos>2</qos>
+        </subscription>
+    </subscriptionList>
+</config>
