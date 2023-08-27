@@ -19,10 +19,17 @@ def print_menu():
     for i in options.keys():
         print(i, " ", options[i])
 
+options = {
+    1: "Add subscription",
+    2: "Publish",
+    3: "See messages",
+    4: "Exit"
+}
 
 def subscribe(list):
     for topic in list:
         client.subscribe(f'{topic[0]}/#', qos=int(topic[1]))
+
 def add_subscription():
     topic_to_sub = input("Enter the topic to subscribe: ")
     qos_to_sub = int(input("Enter qos: (default 0)") or "0")
@@ -44,12 +51,6 @@ def publish():
     msg = input("Enter the message: ")
     (rc, mid) = client.publish(f'{topic_to_pub}', str(msg), qos=qos_to_pub)  # rc: return code mid: message id
 
-options = {
-    1: "Add subscription",
-    2: "Publish",
-    3: "See messages",
-    4: "Exit"
-}
 
 # host_name = input("Enter the host name: ") or "broker.mqtt-dashboard.com"
 # port_number = input("Enter the port number: ") or "1883"
@@ -83,6 +84,7 @@ while True:
     option = input("Enter the option: ")
     if (option == "1"):
         add_subscription()
+        continue
     elif (option == "2"):
         publish()
         continue
